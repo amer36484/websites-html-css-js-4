@@ -1,194 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Manı'nin Web App'i</title>
+  <meta charset="UTF-8" />
+  <title>Manı'nin Web App'i - 33/33/33 Bölünmüş</title>
   <style>
-    body {
-      font-family: sans-serif;
-      background-color: #f9f9f9;
-      padding: 20px;
-      line-height: 1.6;
-    }
-
-    h2 {
-      color: #333;
+    /* Genel sayfa ayarı: 3 eşit dikey bölüm */
+    html, body {
+      margin: 0; padding: 0; height: 100%;
+      font-family: monospace, monospace;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
     }
 
     .section {
-      margin-bottom: 30px;
-      border: 1px solid #ccc;
-      padding: 15px;
-      border-radius: 10px;
-      background: #fff;
-    }
-
-    button {
-      padding: 10px 15px;
-      margin: 5px;
-      font-size: 14px;
-      border: none;
-      border-radius: 5px;
-      background-color: #008cff;
-      color: white;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #005ea6;
-    }
-
-    input {
+      height: 33.3333vh;
+      overflow-y: auto;
       padding: 10px;
-      font-size: 16px;
-      margin-top: 10px;
+      box-sizing: border-box;
+      border-bottom: 1px solid #ccc;
     }
 
-    .is-subscribed {
-      background-color: #ccc;
-      color: black;
+    h2 {
+      margin: 0 0 10px 0;
+      font-weight: bold;
+      font-size: 1.3rem;
+      color: #222;
+    }
+
+    /* HTML Bölümü */
+    #html-section {
+      background: #f9f9f9;
+      color: #111;
+      white-space: pre-wrap;
+    }
+
+    /* CSS Bölümü */
+    #css-section {
+      background: #fff8dc;
+      color: #6a4c93;
+      white-space: pre-wrap;
+    }
+
+    /* JS Bölümü */
+    #js-section {
+      background: #e8f5e9;
+      color: #2e7d32;
+      white-space: pre-wrap;
     }
   </style>
 </head>
 <body>
 
-  <div class="section">
-    <h2>Calculator</h2>
-    <button onclick="updateCalculation('1')">1</button>
-    <button onclick="updateCalculation('+')">+</button>
-    <button onclick="updateCalculation('2')">2</button>
-    <button onclick="updateCalculation('=')">=</button>
+  <div id="html-section" class="section">
+    <h2>HTML Kodu</h2>
+    <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8" /&gt;
+  &lt;title&gt;Manı'nin Web App'i&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;h1&gt;Welcome to Manı's Website!&lt;/h1&gt;
+  &lt;p&gt;This is a simple interactive webpage built with HTML, CSS, and JavaScript.&lt;/p&gt;
+
+  &lt;button onclick="changeBackgroundColor()"&gt;Change Background Color&lt;/button&gt;
+
+  &lt;div class="section"&gt;
+    &lt;h2&gt;Calculator&lt;/h2&gt;
+    &lt;button onclick="updateCalculation('1')"&gt;1&lt;/button&gt;
+    &lt;button onclick="updateCalculation('+')"&gt;+&lt;/button&gt;
+    &lt;button onclick="updateCalculation('2')"&gt;2&lt;/button&gt;
+    &lt;button onclick="updateCalculation('=')"&gt;=&lt;/button&gt;
+  &lt;/div&gt;
+
+  &lt;div class="section"&gt;
+    &lt;h2&gt;Rock Paper Scissors&lt;/h2&gt;
+    &lt;button onclick="playGame('rock')"&gt;Rock&lt;/button&gt;
+    &lt;button onclick="playGame('paper')"&gt;Paper&lt;/button&gt;
+    &lt;button onclick="playGame('scissors')"&gt;Scissors&lt;/button&gt;
+    &lt;br&gt;
+    &lt;button onclick="resetScore()"&gt;Reset Score&lt;/button&gt;
+  &lt;/div&gt;
+
+  &lt;div class="section"&gt;
+    &lt;h2&gt;Cart Quantity&lt;/h2&gt;
+    &lt;button onclick="updateCartQuantity(1)"&gt;Add to Cart&lt;/button&gt;
+    &lt;button onclick="updateCartQuantity(-1)"&gt;Remove&lt;/button&gt;
+    &lt;button onclick="resetCart()"&gt;Reset Cart&lt;/button&gt;
+  &lt;/div&gt;
+
+  &lt;div class="section"&gt;
+    &lt;h2&gt;YouTube Subscribe Button&lt;/h2&gt;
+    &lt;button id="subscribe-button" onclick="subscribe()"&gt;Subscribe&lt;/button&gt;
+  &lt;/div&gt;
+
+  &lt;div class="section"&gt;
+    &lt;h2&gt;Amazon Shipping Calculator&lt;/h2&gt;
+    &lt;input id="cost-input" placeholder="Enter cost" onkeydown="handleCostKeydown(event)" /&gt;
+    &lt;button onclick="calculateTotal()"&gt;Calculate&lt;/button&gt;
+    &lt;p id="total-cost"&gt;$0&lt;/p&gt;
+  &lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+    </pre>
   </div>
 
-  <div class="section">
-    <h2>Rock Paper Scissors</h2>
-    <button onclick="playGame('rock')">Rock</button>
-    <button onclick="playGame('paper')">Paper</button>
-    <button onclick="playGame('scissors')">Scissors</button>
-    <br>
-    <button onclick="resetScore()">Reset Score</button>
+  <div id="css-section" class="section">
+    <h2>CSS Kodu</h2>
+    <pre>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  padding: 20px;
+  line-height: 1.6;
+  color: #333;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px 15px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  background-color: #008cff;
+  color: white;
+  cursor: pointer;
+  margin: 5px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #005ea6;
+}
+
+input {
+  padding: 10px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.is-subscribed {
+  background-color: #ccc;
+  color: black;
+}
+    </pre>
   </div>
 
-  <div class="section">
-    <h2>Cart Quantity</h2>
-    <button onclick="updateCartQuantity(1)">Add to Cart</button>
-    <button onclick="updateCartQuantity(-1)">Remove</button>
-    <button onclick="resetCart()">Reset Cart</button>
-  </div>
+  <div id="js-section" class="section">
+    <h2>JavaScript Kodu</h2>
+    <pre>
+// Calculator
+let calculation = localStorage.getItem('calculation') || '';
 
-  <div class="section">
-    <h2>YouTube Subscribe Button</h2>
-    <button id="subscribe-button" onclick="subscribe()">Subscribe</button>
-  </div>
-
-  <div class="section">
-    <h2>Amazon Shipping Calculator</h2>
-    <input id="cost-input" placeholder="Enter cost" onkeydown="handleCostKeydown(event)">
-    <button onclick="calculateTotal()">Calculate</button>
-    <p id="total-cost">$0</p>
-  </div>
-
-  <script>
-    // Calculator
-    let calculation = localStorage.getItem('calculation') || '';
-    function updateCalculation(value) {
-      calculation += value;
-      console.log(calculation);
-      localStorage.setItem('calculation', calculation);
+function updateCalculation(value) {
+  if(value === '=') {
+    try {
+      calculation = eval(calculation).toString();
+    } catch(e) {
+      alert('Invalid calculation!');
+      calculation = '';
     }
+  } else {
+    calculation += value;
+  }
+  localStorage.setItem('calculation', calculation);
+  console.log(calculation);
+}
 
-    // Rock Paper Scissors
-    let score = JSON.parse(localStorage.getItem('score')) || { wins: 0, losses: 0, ties: 0 };
-    function playGame(playerMove) {
-      const computerMove = pickComputerMove();
-      let result = '';
+// Rock Paper Scissors
+let score = JSON.parse(localStorage.getItem('score')) || { wins: 0, losses: 0, ties: 0 };
 
-      if (playerMove === 'scissors') {
-        if (computerMove === 'rock') result = 'You lose.';
-        else if (computerMove === 'paper') result = 'You win.';
-        else result = 'Tie.';
-      } else if (playerMove === 'paper') {
-        if (computerMove === 'rock') result = 'You win.';
-        else if (computerMove === 'paper') result = 'Tie.';
-        else result = 'You lose.';
-      } else if (playerMove === 'rock') {
-        if (computerMove === 'rock') result = 'Tie.';
-        else if (computerMove === 'paper') result = 'You lose.';
-        else result = 'You win.';
-      }
+function playGame(playerMove) {
+  const computerMove = pickComputerMove();
+  let result = '';
 
-      if (result === 'You win.') score.wins += 1;
-      else if (result === 'You lose.') score.losses += 1;
-      else score.ties += 1;
+  if(playerMove === 'scissors') {
+    if(computerMove === 'rock') result = 'You lose.';
+    else if(computerMove === 'paper') result = 'You win.';
+    else result = 'Tie.';
+  } else if(playerMove === 'paper') {
+    if(computerMove === 'rock') result = 'You win.';
+    else if(computerMove === 'paper') result = 'Tie.';
+    else result = 'You lose.';
+  } else if(playerMove === 'rock') {
+    if(computerMove === 'rock') result = 'Tie.';
+    else if(computerMove === 'paper') result = 'You lose.';
+    else result = 'You win.';
+  }
 
-      localStorage.setItem('score', JSON.stringify(score));
+  if(result === 'You win.') score.wins++;
+  else if(result === 'You lose.') score.losses++;
+  else score.ties++;
 
-      alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
+  localStorage.setItem('score', JSON.stringify(score));
+  alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
 Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
-    }
+}
 
-    function pickComputerMove() {
-      const randomNumber = Math.random();
-      if (randomNumber < 1/3) return 'rock';
-      else if (randomNumber < 2/3) return 'paper';
-      else return 'scissors';
-    }
+function pickComputerMove() {
+  const rand = Math.random();
+  if(rand < 1/3) return 'rock';
+  else if(rand < 2/3) return 'paper';
+  else return 'scissors';
+}
 
-    function resetScore() {
-      score = { wins: 0, losses: 0, ties: 0 };
-      localStorage.removeItem('score');
-      console.log('Score reset!');
-    }
+function resetScore() {
+  score = { wins:0, losses:0, ties:0 };
+  localStorage.removeItem('score');
+  console.log('Score reset!');
+}
 
-    // Cart
-    let cartQuantity = 0;
-    function updateCartQuantity(change) {
-      if (cartQuantity + change > 10) {
-        alert('The cart is full');
-        return;
-      }
-      if (cartQuantity + change < 0) {
-        alert('Not enough items in the cart');
-        return;
-      }
-      cartQuantity += change;
-      console.log(`Cart quantity: ${cartQuantity}`);
-    }
+// Cart Quantity
+let cartQuantity = 0;
 
-    function resetCart() {
-      cartQuantity = 0;
-      console.log('Cart was reset.');
-      console.log(`Cart quantity: ${cartQuantity}`);
-    }
+function updateCartQuantity(change) {
+  if(cartQuantity + change > 10) {
+    alert('The cart is full');
+    return;
+  }
+  if(cartQuantity + change < 0) {
+    alert('Not enough items in the cart');
+    return;
+  }
+  cartQuantity += change;
+  console.log('Cart quantity:', cartQuantity);
+}
 
-    // Subscribe
-    function subscribe() {
-      const buttonElement = document.getElementById('subscribe-button');
-      if (buttonElement.innerText === 'Subscribe') {
-        buttonElement.innerHTML = 'Subscribed';
-        buttonElement.classList.add('is-subscribed');
-      } else {
-        buttonElement.innerHTML = 'Subscribe';
-        buttonElement.classList.remove('is-subscribed');
-      }
-    }
+function resetCart() {
+  cartQuantity = 0;
+  console.log('Cart reset.');
+}
 
-    // Shipping
-    function handleCostKeydown(event) {
-      if (event.key === 'Enter') {
-        calculateTotal();
-      }
-    }
+// Subscribe Button
+function subscribe() {
+  const btn = document.getElementById('subscribe-button');
+  if(btn.innerText === 'Subscribe') {
+    btn.innerText = 'Subscribed';
+    btn.classList.add('is-subscribed');
+  } else {
+    btn.innerText = 'Subscribe';
+    btn.classList.remove('is-subscribed');
+  }
+}
 
-    function calculateTotal() {
-      const inputElement = document.getElementById('cost-input');
-      let cost = Number(inputElement.value);
-      if (cost < 40) {
-        cost += 10;
-      }
-      document.getElementById('total-cost').innerHTML = `$${cost}`;
-    }
-  </script>
+// Amazon Shipping Calculator
+function handleCostKeydown(e) {
+  if(e.key === 'Enter') {
+    calculateTotal();
+  }
+}
+
+function calculateTotal() {
+  const costInput = document.getElementById('cost-input');
+  let cost = Number(costInput.value);
+  if(cost < 40) {
+    cost += 10;
+  }
+  document.getElementById('total-cost').innerText = `$${cost}`;
+}
+
+// Background color changer
+const colors = ["#ff6b6b", "#6bc5ff", "#6bff95", "#ffe66b", "#c56bff", "#ffb56b"];
+let colorIndex = 0;
+function changeBackgroundColor() {
+  document.body.style.backgroundColor = colors[colorIndex];
+  colorIndex = (colorIndex + 1) % colors.length;
+}
+    </pre>
+  </div>
 
 </body>
 </html>
